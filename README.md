@@ -81,7 +81,7 @@ Open your browser and visit `http://localhost:7860`.
 
 如果您不想手动配置环境，可以下载整合了 Python 环境、ffmpeg 和模型的一键启动便携包。
 
-- **下载链接：** [在此处插入网盘链接]
+- **下载链接：** [移动云盘 提取码:aiu7](https://yun.139.com/shareweb/#/w/i/2sxQjMjzkz23u)[OneDrive 提取码:aYx2](https://savef-my.sharepoint.com/:u:/g/personal/yueyechezu_savef_onmicrosoft_com/IQDgM-CnmGlCRrXqiHHk7O6iAT8rBwhK9eIBaob1HQzfLxM?e=2hnRVm)
 
 ### 主要功能
 
