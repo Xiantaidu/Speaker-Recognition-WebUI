@@ -59,8 +59,8 @@ def run_make_proxy(hq_dir, proxy_dir):
                 
                 tasks.append((src_path, dst_path))
 
-    # 使用 CPU 核心数 - 1 作为进程数，避免卡死系统
-    num_workers = max(1, os.cpu_count() - 1)
+    # 使用 CPU 核心数 - 1 作为进程数，避免卡死系统，且限制最大为 8
+    num_workers = min(8, max(1, os.cpu_count() - 1))
     print(f"启动 {num_workers} 个进程进行并行转换...")
 
     count = 0

@@ -93,9 +93,9 @@ DEFAULT_EXAMPLES_DIR = "examples"   # 注册音频目录
 DEFAULT_MODEL_PATH = 'models'       # 模型文件夹
 DEFAULT_SCORE_THRESHOLD = 0.7    # 阈值
 
-# 进程数：默认使用 CPU 核心数减 2 (留点资源给系统)
+# 进程数：默认使用 CPU 核心数减 2 (留点资源给系统)，且限制最大为 8
 # 如果你想要火力全开，改成 os.cpu_count()
-DEFAULT_WORKER_NUM = max(1, os.cpu_count() - 2) 
+DEFAULT_WORKER_NUM = min(8, max(1, os.cpu_count() - 2))
 # ===========================================
 
 # 全局变量（用于在子进程中共享模型和声纹库）
