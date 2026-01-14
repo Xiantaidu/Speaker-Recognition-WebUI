@@ -124,7 +124,7 @@ Open your browser and visit `http://localhost:7860`.
     ```
 
 4.  下载模型：
-    WeSpeaker 模型将在首次运行时自动下载。您也可以手动将模型文件放入 `models/` 目录。
+    WeSpeaker 模型将在首次运行时自动下载。您也可以手动将模型文件放入 `models/` 目录(推荐)。
 
 #### 运行
 
@@ -138,7 +138,7 @@ Open your browser and visit `http://localhost:7860`.
 
 ### 目录结构说明
 
-*   `bocchi_the_rock/`: 默认的素材存放目录（可修改）。
+*   `datasets/`: 默认的素材存放目录（可修改）。
 *   `clips_HQ/`: 截取的高音质音频片段。
 *   `clips_16k/`: 转换后的 16k 单声道代理音频（用于识别）。
 *   `examples/`: 存放说话人参考样本的目录。

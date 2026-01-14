@@ -9,7 +9,7 @@ from merge import merge_wavs
 
 # ================= 配置 =================
 BASE_DIR = os.getcwd()
-SOURCE_DIR = os.path.join(BASE_DIR, "bocchi_the_rock")
+SOURCE_DIR = os.path.join(BASE_DIR, "datasets")
 OUTPUT_ROOT = os.path.join(BASE_DIR, "clips_HQ")
 PROXY_DIR = os.path.join(BASE_DIR, "clips_16k")
 EXAMPLES_DIR = os.path.join(BASE_DIR, "examples")

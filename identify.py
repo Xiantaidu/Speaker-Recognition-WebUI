@@ -86,11 +86,11 @@ import multiprocessing
 os.environ["CUDA_VISIBLE_DEVICES"] = ""
 os.environ["WESPEAKER_DEVICE"] = "cpu"
 
-DEFAULT_PROXY_DIR = "clips_16k"     # AI 读这里 (16k)
-DEFAULT_HQ_DIR = "clips_HQ"         # 搬运工搬这里 (44.1k)
-DEFAULT_RESULT_DIR = "final_result" # 结果存这里
+DEFAULT_PROXY_DIR = "clips_16k"     # (16k)
+DEFAULT_HQ_DIR = "clips_HQ"         # (44.1k)
+DEFAULT_RESULT_DIR = "final_result" # 结果目录
 DEFAULT_EXAMPLES_DIR = "examples"   # 注册音频目录
-DEFAULT_MODEL_PATH = 'models'       # 模型名称 (必须是 english/resnet)
+DEFAULT_MODEL_PATH = 'models'       # 模型文件夹
 DEFAULT_SCORE_THRESHOLD = 0.7    # 阈值
 
 # 进程数：默认使用 CPU 核心数减 2 (留点资源给系统)
