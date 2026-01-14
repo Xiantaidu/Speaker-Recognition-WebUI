@@ -1,0 +1,10 @@
+bocchi_the_rock/
+examples/
+__pycache__/
+clips_16k/
+clips_HQ/
+final_result/
+*.wav
+env/
+models/
+ffmpeg.exe
