@@ -68,6 +68,42 @@ If you don't want to configure the environment manually, you can download the al
 
 Open your browser and visit `http://localhost:7860`.
 
+### Acknowledgements
+
+This project is built upon several excellent open-source projects:
+
+*   **[WeSpeaker](https://github.com/wenet-e2e/wespeaker)**: For the core speaker embedding extraction and recognition capabilities.
+*   **[Gradio](https://github.com/gradio-app/gradio)**: For providing an easy-to-use web interface.
+*   **[PyTorch](https://pytorch.org/)**: The underlying deep learning framework.
+*   **[FFmpeg](https://ffmpeg.org/)**: For powerful audio processing and conversion.
+*   **[pysubs2](https://github.com/tkarabela/pysubs2)**: For handling subtitle files.
+*   **[pydub](https://github.com/jiaaro/pydub)**: For audio manipulation.
+
+### Citations
+
+If you find wespeaker useful, please cite it as:
+
+```bibtex
+@article{wang2024advancing,
+  title={Advancing speaker embedding learning: Wespeaker toolkit for research and production},
+  author={Wang, Shuai and Chen, Zhengyang and Han, Bing and Wang, Hongji and Liang, Chengdong and Zhang, Binbin and Xiang, Xu and Ding, Wen and Rohdin, Johan and Silnova, Anna and others},
+  journal={Speech Communication},
+  volume={162},
+  pages={103104},
+  year={2024},
+  publisher={Elsevier}
+}
+
+@inproceedings{wang2023wespeaker,
+  title={Wespeaker: A research and production oriented speaker embedding learning toolkit},
+  author={Wang, Hongji and Liang, Chengdong and Wang, Shuai and Chen, Zhengyang and Zhang, Binbin and Xiang, Xu and Deng, Yanlei and Qian, Yanmin},
+  booktitle={IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  pages={1--5},
+  year={2023},
+  organization={IEEE}
+}
+```
+
 ---
 
 <a name="chinese"></a>
@@ -144,3 +180,38 @@ Open your browser and visit `http://localhost:7860`.
 *   `examples/`: 存放说话人参考样本的目录。
 *   `final_result/`: 最终识别结果和合并后的音频。
 *   `models/`: 存放 WeSpeaker 模型文件。
+
+### 致谢 (Acknowledgements)
+
+本项目基于以下优秀的开源项目构建：
+
+*   **[WeSpeaker](https://github.com/wenet-e2e/wespeaker)**: 提供核心的声纹提取和识别能力。
+*   **[Gradio](https://github.com/gradio-app/gradio)**: 提供易用的 Web 界面。
+*   **[PyTorch](https://pytorch.org/)**: 底层深度学习框架。
+*   **[FFmpeg](https://ffmpeg.org/)**: 强大的音频处理和转换工具。
+*   **[pysubs2](https://github.com/tkarabela/pysubs2)**: 用于处理字幕文件。
+*   **[pydub](https://github.com/jiaaro/pydub)**: 用于音频操作。
+
+### 引用 (Citations)
+
+如果您觉得 wespeaker 有用，请引用它：
+
+```bibtex
+@article{wang2024advancing,
+  title={Advancing speaker embedding learning: Wespeaker toolkit for research and production},
+  author={Wang, Shuai and Chen, Zhengyang and Han, Bing and Wang, Hongji and Liang, Chengdong and Zhang, Binbin and Xiang, Xu and Ding, Wen and Rohdin, Johan and Silnova, Anna and others},
+  journal={Speech Communication},
+  volume={162},
+  pages={103104},
+  year={2024},
+  publisher={Elsevier}
+}
+
+@inproceedings{wang2023wespeaker,
+  title={Wespeaker: A research and production oriented speaker embedding learning toolkit},
+  author={Wang, Hongji and Liang, Chengdong and Wang, Shuai and Chen, Zhengyang and Zhang, Binbin and Xiang, Xu and Deng, Yanlei and Qian, Yanmin},
+  booktitle={IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  pages={1--5},
+  year={2023},
+  organization={IEEE}
+}
