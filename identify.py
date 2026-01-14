@@ -191,12 +191,52 @@ def process_single_file(proxy_path):
     except Exception:
         return False
 
+def check_and_download_model(model_path):
+    """
+    检查模型是否存在，如果不存在则自动下载 'english' 模型并保存到 model_path
+    """
+    # 检查 model_path 是否包含必要的模型文件
+    # WeSpeaker 模型通常包含 avg_model.pt 和 config.yaml
+    has_model = False
+    if os.path.exists(model_path) and os.path.isdir(model_path):
+        files = os.listdir(model_path)
+        if 'avg_model.pt' in files and 'config.yaml' in files:
+            has_model = True
+    
+    if not has_model:
+        print(f"⚠️ 未在 {model_path} 找到模型，正在自动下载 'english' 模型...")
+        try:
+            # 这会自动下载模型到 ~/.wespeaker/english
+            downloaded_model = wespeaker.load_model('english')
+            
+            # 获取下载后的模型路径 (通常在 ~/.wespeaker/english)
+            # 我们可以尝试从 downloaded_model 对象中获取路径，或者直接假设默认路径
+            # 但为了简单起见，我们直接让 wespeaker 加载 'english'，
+            # 如果用户指定了本地路径但为空，我们提示用户模型已下载到默认位置，
+            # 或者我们可以尝试找到它并复制。
+            
+            # 由于 wespeaker.load_model 返回的是 Speaker 对象，不直接暴露路径。
+            # 但我们可以通过 inspect 或者查看 wespeaker 源码知道默认路径。
+            # 为了稳健性，如果本地没找到，我们就直接用 'english' 这个名字加载，
+            # 而不是强行用 model_path。
+            
+            print("✅ 模型下载完成。")
+            return 'english' # 返回模型名称，让 wespeaker 自己去缓存找
+        except Exception as e:
+            print(f"❌ 模型下载失败: {e}")
+            return model_path # 还是返回原路径，让它报错
+    
+    return model_path
+
 def run_identification(proxy_dir, hq_dir, result_dir, examples_dir, model_path, threshold, worker_num):
     print(f"🔥 启动多进程加速 (使用 {worker_num} 个 CPU 核心)...")
     
+    # 检查并下载模型
+    actual_model_path = check_and_download_model(model_path)
+
     # 1. 在主进程加载一次模型，为了注册主角
-    print("正在主进程注册主角声纹...")
-    temp_model = wespeaker.load_model(model_path)
+    print(f"正在主进程注册主角声纹 (使用模型: {actual_model_path})...")
+    temp_model = wespeaker.load_model(actual_model_path)
     temp_model.set_device('cpu')
     
     speakers_emb = {}
@@ -246,7 +286,7 @@ def run_identification(proxy_dir, hq_dir, result_dir, examples_dir, model_path, 
     # initargs 负责把声纹库传给每个子进程
     with ProcessPoolExecutor(max_workers=worker_num, 
                              initializer=init_worker, 
-                             initargs=(model_path, speakers_emb, config)) as executor:
+                             initargs=(actual_model_path, speakers_emb, config)) as executor:
         
         # 提交所有任务
         futures = [executor.submit(process_single_file, f) for f in task_files]
