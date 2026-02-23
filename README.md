@@ -117,7 +117,7 @@ If you find wespeaker useful, please cite it as:
 
 如果您不想手动配置环境，可以下载整合了 Python 环境、ffmpeg 和模型的一键启动便携包。
 
-- **下载链接：** [移动云盘 提取码:bpxa](https://yun.139.com/shareweb/#/w/i/2sxQjMjzgYEig)  [OneDrive 提取码:aYx2](https://savef-my.sharepoint.com/:u:/g/personal/yueyechezu_savef_onmicrosoft_com/IQB_cFWzTRrHRrPWaS5oYxG-AbZHWB3xRumrHpJf4c5ne_Y?e=1XAgMQ)
+- **下载链接：** [移动云盘 提取码:zom6](https://yun.139.com/shareweb/#/w/i/2sUfJSWBkuaea)  [百度网盘 提取码:pp1x](https://pan.baidu.com/s/17XVqO6prK8TMH-NKN1PhlQ)
 
 ### 主要功能
 
@@ -164,7 +164,7 @@ If you find wespeaker useful, please cite it as:
 
 #### 运行
 
-*   **方式 1 (推荐)**：双击根目录下的 `start.bat`。它会自动设置环境变量并启动 WebUI。
+*   **方式 1 (推荐)**：双击根目录下的 `run.bat`。它会自动设置环境变量并启动 WebUI。
 *   **方式 2**：通过命令行运行：
     ```bash
     python app.py
